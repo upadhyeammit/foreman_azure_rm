@@ -30,10 +30,10 @@ module ForemanAzureRM
 
       def action_permission
         case params[:action]
-          when 'available_resource_groups', 'available_sizes', 'available_subnets', 'available_vnets'
-            :view
-          else
-            super
+        when 'available_resource_groups', 'available_sizes', 'available_subnets', 'available_vnets'
+          :view
+        else
+          super
         end
       end
     end

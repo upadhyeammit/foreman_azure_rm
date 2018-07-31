@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/01100010011001010110010101110000/foreman_azure_rm'
   s.license = 'GPL-3.0'
   s.files   = Dir['{app,config,db,lib,locale}/**/*'] + ['LICENSE', 'Rakefile', 'README.md']
-  s.description = 'This gem provides Azure Resource Manager as a compute resource for The Foreman'
+  s.description = 'Provides Azure Resource Manager as a compute resource for The Foreman'
 
-  s.add_dependency 'fog-azure-rm', '~> 0.4.0'
+  s.add_dependency 'azure-armrest', '~> 0.9.0'
   s.add_dependency 'deface', '< 2.0'
 end

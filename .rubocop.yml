@@ -1,12 +1,6 @@
-# TODO: remove this file by either moving cops here or fixing code
-inherit_from:
-  - .rubocop_todo.yml
-
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.3
   TargetRailsVersion: 5.1
-  Include:
-    - 'app/views/api/**/*.rabl'
   Exclude:
     - 'db/schema.rb'
     - 'node_modules/**/*'
@@ -29,11 +23,13 @@ Style/Documentation:
 
 # Support both ruby19 and hash_rockets
 Style/HashSyntax:
-  Enabled: false
+  Enabled: true
+  EnforcedStyle: hash_rockets
 
 # Both double and single quotes are OK
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
+  EnforcedStyle: single_quotes
 
 # Don't enforce frozen string literals
 Style/FrozenStringLiteralComment:
@@ -46,10 +42,6 @@ Metrics/ClassLength:
 Performance/Casecmp:
   Enabled: false
 
-Performance/FixedSize:
-  Exclude:
-    - 'test/**/*'
-
 Performance/RedundantMatch:
   Enabled: true
 
@@ -59,6 +51,45 @@ Performance/RedundantMerge:
 Rails/Blank:
   UnlessPresent: false
 
-#Allow both ['a', 'b'], %w[a b] and %w(a b) style arrays
 Style/WordArray:
+  Enabled: true
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/TernaryParentheses:
+  EnforcedStyle: require_parentheses_when_complex
+
+Style/InverseMethods:
+  Enabled: false
+
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Layout/DotPosition:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+Layout/AlignHash:
+  Enabled: true
+  EnforcedHashRocketStyle: table
+
+Layout/AlignParameters:
   Enabled: true
